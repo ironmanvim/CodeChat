@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+@font-face {
+	src: url(../fonts/OpenSans-Regular.ttf);
+	font-family: OpenSans;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	font-family: OpenSans;
+	padding: 0px;
+	color: azure;
+	zoom :reset;
+}
+
+html {
+	background-color: #000000;
+}
+
+.nav-bar {
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	background: #222222;
+	padding: 0px 20px 5px 20px;
+	width: 100%;
+	height: 100px;
+	padding-right: 200px;
+	padding-left: 200px;
+	border-bottom: black solid 2px;
+}
+
+.nav-bar li {
+	list-style: none;
+	margin-top: 2px; 
+}
+
+.nav-bar .login {
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 20px;
+	float: right;
+}
+
+.nav-bar img {
+	margin-top: 20px;
+	width: 120px;
+}
+
+.nav-bar a,.container a {
+	text-decoration: none;
+	color: #FFE4C4;
+}
+
+.nav-bar a:hover,.container a:hover {
+	text-decoration: underline;
+}
+
+.nav-bar input,button {
+	border: #FFE4C4 solid 1px;
+	border-radius: 3px;
+	background: #222222;
+	padding: 3px;
+}
+
+.nav-bar button {
+	padding: 3px 8px 3px 8px;
+}
+
+.nav-bar input:hover,input:focus {
+	background: #000000;
+}
+
+.nav-bar button:hover {
+	background: #FFE4C4;
+	color: #222222;
+}
+
+.container {
+	margin-top: 110px;
+}
+
+.container .col-50 {
+	float: left;
+	width: 40%;
+	padding-left: 100px;
+	margin-left: 50px;
+}
+
+.container input{
+	border: #FFE4C4 solid 1px;
+	border-radius: 3px;
+	background: #222222;
+	padding: 10px;
+	margin: 10px 10px 10px 0px;
+	font-size: 15px;
+}
+
+.container h1 {
+	font-size: 40px;
+}
+
+.container input:hover,input:focus {
+	background: #000000;
+}
+
+.container button:hover {
+	background: #FFE4C4;
+	color: #222222;
+}
+
+.container .radio {
+	padding: 10px;
+}
+
+.container .help {
+	font-size: 12px;
+	width: 150px;
+	color: #FFE4C4;
+}
+
+.container button {
+	padding: 15px;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	visibility: visible;
+    width: 150px;
+	height: 50px;
+    background-color: #A5937D;
+	font-size: 12px;
+    text-align: center;
+	color: black;
+    border-radius: 1px;
+    padding: 5px 0;
+	margin: -60px 0px 0px 80px;
+    /* Position the tooltip */
+    position: absolute;
+	top: -15px;
+    z-index: 1;
+}
+
+@keyframes first {
+	from {top: -15px;}
+	to {top: 30px;}
+}
+
+@keyframes last {
+	from {top: 30px;}
+	to {top: -15px}
+}
