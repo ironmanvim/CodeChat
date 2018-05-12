@@ -160,3 +160,13 @@ html {
 	from {top: 30px;}
 	to {top: -15px}
 }
+
+@keyframes error-red {
+	from {background-color: #222222}
+	to {background-color: #700001}
+}
+
+@keyframes error-back {
+	from {background-color: #700001}
+	to {background-color: #222222}
+}

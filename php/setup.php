@@ -11,7 +11,6 @@
 
 	<?php // Example 26-3: setup.php
   require_once 'info.php';
-  deleteTable('members');
   createTable('members',
               'id INT PRIMARY KEY AUTO_INCREMENT,
 			  first_name VARCHAR(30),
@@ -22,12 +21,11 @@
 			  birthday DATE,
 			  gender VARCHAR(2),
               online_time INT UNSIGNED');
-
-  createTable('messages',
-              'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-              user VARCHAR(16),
-              time INT UNSIGNED,
-              message VARCHAR(4096)');
+	
+	createTable('friends',
+			   'uid INT,
+			   fid INT,
+			   status INT');
 
 ?>
 

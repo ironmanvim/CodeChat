@@ -6,7 +6,10 @@ if(isset($_POST['user']) && isset($_POST['pass'])) {
 	$pass = $_POST['pass'];
 	$info->getUser($user,$pass);
 	if(!$info->wmsg) {
-		
+		session_start();
+		$_SESSION['user'] = $user;
+		$_SESSION['pass'] = $pass;
+		header("Location: index.php");
 	}
 	else {
 		$warning = $info->showError();
@@ -45,7 +48,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['user
 <body>
 	
 	<div class="main-container">
-		<div class="nav-bar">
+		<div class="nav-bar" id="nav-error">
 			<form action="home.php" method="POST">
 				<img src="images/codechat.png">
 				<div class="login">
@@ -103,8 +106,11 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['user
 var warning = <?php echo $info->wmsg; ?>;
 if(warning != 0) {
 	element = document.getElementById("warning");
+	navbar = document.getElementById("nav-error");
 	element.style.animation = "first 1s ease-out both";
+	navbar.style.animation = "error-red 1s ease-out both";
 	setTimeout(function() {
+		navbar.style.animationName = "error-back";
 		element.style.animationName = "last";
 	}, 5000);
 }

@@ -1,10 +1,12 @@
 <div class="nav-bar">
 	<ul>
 		<p>CodeChat</p>
-		<li><button>Logout</button></li>
+		<form method="post" action="index.php" style="display: inline">
+			<li><button type="submit" name="logout" value="1">Logout</button></li>
+		</form>
 		<li><button>Friends</button></li>
 		<li><button>Messages</button></li>
-		<li><button>Profile</button></li>
+		<li><button><?php if(isset($info)) echo $info->getFirstName(); ?></button></li>
 	</ul>
 </div>
 <div class="side-bar-left">

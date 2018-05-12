@@ -1,7 +1,7 @@
 <?php
 require_once 'info.php';
 class User {
-    private $id,$first_name,$last_name,$email,$phone,$pass,$birthday,$gender,$online_time;
+    private $first_name,$last_name,$email,$phone,$pass,$birthday,$gender,$online_time;
     public $wmsg = 0;
     
     //gets info of user with email or phone and password
@@ -17,7 +17,6 @@ class User {
         }
         if($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-            $this->id = $row['id'];
             $this->first_name = $row['first_name'];
             $this->last_name = $row['last_name'];
             $this->email = $row['email'];
@@ -64,7 +63,14 @@ class User {
         $query = queryMysql("SELECT * FROM members where email = '$email' and phone = '$phone'");
         if(!$query->num_rows) {
             $result = queryMysql("INSERT INTO members VALUES(NULL, '$first_name', '$last_name', '$email', '$phone', '$pass', '$birthday', '$gender', '$time')");
-            $this->getUser($user,$pass);
+            $this->first_name = $first_name;
+            $this->last_name = $last_name;
+            $this->birthday = $birthday;
+            $this->email = $email;
+            $this->phone = $phone;
+            $this->pass = $pass;
+            $this->gender = $gender;
+            $this->online_time = $time;
         }
         else 
             $this->wmsg = 1; //User already exist error
@@ -117,32 +123,6 @@ class User {
             return "Invalid Name Try Again!";
         else if($this->wmsg == 7)
             return "Lesser Birthday Not Eligible to Signup";
-    }
-    
-    function getFriends() {
-        $result = queryMysql("SELECT * FROM friends WHERE uid='$id'");
-        for($i = 0; $i < $result->num_rows; $i++) {
-            $result->data_seek($i);
-            $row = $result->fetch_assoc();
-        }
-    }
-    
-    function getUserbyID($id) {
-        $result = queryMysql("SELECT * FROM members WHERE id='$id'");
-        if($result->num_rows == 1) {
-            $row = $result->fetch_assoc();
-            $this->id = $row['id'];
-            $this->first_name = $row['first_name'];
-            $this->last_name = $row['last_name'];
-            $this->email = $row['email'];
-            $this->phone = $row['phone'];
-            $this->birthday = $row['birthday'];
-            $this->gender = $row['gender'];
-            $this->online_time = $row['online_time'];
-        }
-        else {
-            $this->wmsg = 6; //User not exist in searching
-        }
     }
 }
 
