@@ -1,7 +1,10 @@
 <application>
   <component name="GithubAccounts">
-    <account id="ec0da2cb-44df-469f-b187-df6c52420aee" name="ironmanvim">
+    <account id="083109bd-ad7b-4867-831c-8ba1102ff515" name="ironmanvim">
       <server host="github.com" />
     </account>
+  </component>
+  <component name="GithubSettings">
+    <option name="CLONE_GIT_USING_SSH" value="true" />
   </component>
 </application>
