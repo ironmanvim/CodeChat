@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.body {
+	margin-top: 50px; 
+	margin-right: 200px;
+	padding: 10px;
+}
+.body .center {
+	width: 520px;
+    height: 565px;
+	margin: auto;
+    border: 1px solid black; 
+    display: flex;
+    align-items: center;
+}
+.body .center div {
+   	flex: 1;
+}
+.body .col-3 {
+	float: left;
+	width: 25%;
+	margin-left: 50px;
+}
+.body .demo {
+	border: 1px solid red;
+}

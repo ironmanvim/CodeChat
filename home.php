@@ -76,10 +76,10 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['user
 			</form>
 		</div>
 		<div class="container">
-			<div class="col-50">
+			<div class="col-2">
 				&nbsp;
 			</div>
-			<div class="col-50">
+			<div class="col-2">
 				<form action="home.php" method="POST">
 				<h1>Create a new account</h1>
 				<div class="input"><input placeholder="First name" size="21" name="firstname" required><input placeholder="Last name" size="20" name="lastname" required>
