@@ -1,0 +1,38 @@
+@charset "utf-8";
+.chat {
+	background: black;
+	height: 100%;
+	color: black;
+	overflow: auto;
+	padding-bottom: 50px;
+}
+.chat .message-line {
+	min-height: 20px;
+	margin: 5px;
+	padding: 5px;
+	overflow: auto;
+}
+.chat .message-line .you {
+	word-wrap: break-word;
+	max-width: 60%;
+	border-radius: 3px 3px 3px 7px;
+	padding: 5px;
+	background: #0080BD;
+	float: left;
+}
+.chat .message-line .me {
+	word-wrap: break-word;
+	border-radius: 3px 3px 7px 3px;
+	padding: 5px;
+	background: #53A3C9;
+	max-width: 60%;
+	float: right;
+}
+.chat .message-line .you .you-name {
+	word-wrap: break-word;
+	font-size: 15px;
+	color: darkseagreen;
+	font-weight: bold;
+	border-bottom: 1px darkseagreen solid;
+	padding: 3px;
+}
